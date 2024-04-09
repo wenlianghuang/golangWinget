@@ -1,5 +1,6 @@
 # Winget
-
+Winget is try to download, install and manage the application in your computer or in the web
+<br/>
 基本上Winget最重要的就幾個點 **search**, **list**, **download**, **install**, **upgrade**
 <br/>
 
