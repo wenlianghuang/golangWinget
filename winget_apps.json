@@ -1,0 +1,8 @@
+
+  {
+    "Name": "Python 3.10",
+    "Id": "Python.Python.3.10",
+    "Version": "3.10.11",
+    "Match": "Moniker: python3.10",
+    "Source": "winget"
+  }

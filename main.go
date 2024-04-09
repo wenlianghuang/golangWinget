@@ -4,5 +4,6 @@ import wingetlist "golangwinget/wingetList"
 
 func main() {
 
-	wingetlist.WingetList()
+	wingetlist.WingetJSONList()
+	//wingetlist.WingetNormalList()
 }
