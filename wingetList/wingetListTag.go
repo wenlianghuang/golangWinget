@@ -8,16 +8,16 @@ import (
 	"strings"
 )
 
-type App struct {
+type AppTag struct {
 	Name    string `json:"Name"`
 	Id      string `json:"Id"`
 	Version string `json:"Version"`
-	Match   string `json:"Match"`
-	Source  string `json:"Source"`
+	//Match   string `json:"Match"`
+	Source string `json:"Source"`
 }
 
-func WingetJSONList() {
-	cmd := exec.Command("winget", "search", "--tag=python3")
+func WingetListtag() {
+	cmd := exec.Command("winget", "search", "Golang.Go")
 	output, err := cmd.Output()
 	if err != nil {
 		fmt.Println("Error executing command:", err)
@@ -30,17 +30,15 @@ func WingetJSONList() {
 	for _, line := range lines {
 		fields := strings.Fields(line)
 
-		if len(fields) >= 7 {
+		if len(fields) >= 6 {
 			//have space in name
-			name := strings.Join(fields[:2], " ")
+			name := strings.Join(fields[:3], " ")
 			//have space in match
-			match := strings.Join(fields[4:6], " ")
 			app := App{
 				Name:    name,
-				Id:      fields[2],
-				Version: fields[3],
-				Match:   match,
-				Source:  fields[6],
+				Id:      fields[3],
+				Version: fields[4],
+				Source:  fields[5],
 			}
 			apps = append(apps, app)
 		}

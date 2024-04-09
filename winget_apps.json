@@ -1,8 +1,106 @@
 
   {
+    "Name": "Python 3.9",
+    "Id": "Python.Python.3.9",
+    "Version": "3.9.13",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.8",
+    "Id": "Python.Python.3.8",
+    "Version": "3.8.10",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.7",
+    "Id": "Python.Python.3.7",
+    "Version": "3.7.9",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.6",
+    "Id": "Python.Python.3.6",
+    "Version": "3.6.8",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.5",
+    "Id": "Python.Python.3.5",
+    "Version": "3.5.4",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.4",
+    "Id": "Python.Python.3.4",
+    "Version": "3.4.4",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.3",
+    "Id": "Python.Python.3.3",
+    "Version": "3.3.5",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.2",
+    "Id": "Python.Python.3.2",
+    "Version": "3.2.5",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.12",
+    "Id": "Python.Python.3.12",
+    "Version": "3.12.2",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.11",
+    "Id": "Python.Python.3.11",
+    "Version": "3.11.9",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
     "Name": "Python 3.10",
     "Id": "Python.Python.3.10",
     "Version": "3.10.11",
-    "Match": "Moniker: python3.10",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.1",
+    "Id": "Python.Python.3.1",
+    "Version": "3.1.4",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 3.0",
+    "Id": "Python.Python.3.0",
+    "Version": "3.0.1",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python 2",
+    "Id": "Python.Python.2",
+    "Version": "2.7.18150",
+    "Match": "Tag: python3",
+    "Source": "winget"
+  },
+  {
+    "Name": "Python Launcher",
+    "Id": "Python.Launcher",
+    "Version": "3.12.0",
+    "Match": "Tag: python3",
     "Source": "winget"
   }
