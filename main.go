@@ -1,10 +1,16 @@
 package main
 
-import wingetlist "golangwinget/wingetList"
+import (
+	wingetdownload "golangwinget/wingetDownload"
+	wingetlist "golangwinget/wingetList"
+)
 
 func main() {
 
-	wingetlist.WingetJSONList()
+	//wingetlist.WingetJSONList()
 
 	//wingetlist.WingetListtag()
+
+	wingetlist.WingetMonikerSource()
+	wingetdownload.WingetDownloadfromJSON()
 }

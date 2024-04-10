@@ -12,6 +12,8 @@ Winget is try to download, install and manage the application in your computer o
 
 #### download
 從網路或是任何地方下載到**Downloads** folder裡面,但還沒安裝
+<br/>
+if you want to download the application into a specific folder, you can use **-d, --download-directory=/Path/you/want/to/download/application/**
 
 #### install
 安裝成應用程式
@@ -21,3 +23,15 @@ Winget is try to download, install and manage the application in your computer o
 
 <br/>
 如果來源(source)是 **msstore**, 他就是從 **Microsoft Store**出來的,可能要錢!!
+
+
+# Code of Testing Winget with golang
+
+### wingetList -- wingetListMonikerSource() function
+Want to search winget package in the web and find that they might have the " " so you might find it and download the specific pakcage
+<br/>
+Now the suitable is function **wingetListMonikerSource**, it can search the application in the web
+
+
+### wingetDownload -- wingetDownload.go function
+

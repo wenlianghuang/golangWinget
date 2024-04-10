@@ -12,19 +12,19 @@ type AppTag struct {
 	Name    string `json:"Name"`
 	Id      string `json:"Id"`
 	Version string `json:"Version"`
-	//Match   string `json:"Match"`
-	Source string `json:"Source"`
+	Source  string `json:"Source"`
 }
 
 func WingetListtag() {
 	cmd := exec.Command("winget", "search", "Golang.Go")
+	//cmd := exec.Command("winget", "search", "--id=Python.Python")
 	output, err := cmd.Output()
 	if err != nil {
 		fmt.Println("Error executing command:", err)
 		return
 	}
 
-	var apps []App
+	var apps []AppTag
 	lines := strings.Split(string(output), "\n")[2:] // Skip header lines
 
 	for _, line := range lines {
@@ -33,8 +33,7 @@ func WingetListtag() {
 		if len(fields) >= 6 {
 			//have space in name
 			name := strings.Join(fields[:3], " ")
-			//have space in match
-			app := App{
+			app := AppTag{
 				Name:    name,
 				Id:      fields[3],
 				Version: fields[4],
