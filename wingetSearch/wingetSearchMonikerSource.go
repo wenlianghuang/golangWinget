@@ -1,4 +1,4 @@
-package wingetlist
+package wingetsearch
 
 import (
 	"encoding/json"
@@ -9,32 +9,38 @@ import (
 	"strings"
 )
 
-type AppList struct {
+type AppMonkirTag struct {
 	Name    string `json:"Name"`
 	Id      string `json:"Id"`
 	Version string `json:"Version"`
+	//Match   string `json:"Match,omitempty"`
 }
 
-func WingetJSONList() {
-	cmd := exec.Command("winget", "list", "Microsoft Visual")
+func WingetSearchMonikerSource() {
+	cmd := exec.Command("winget", "search", "--moniker=vs2019", "--source=winget")
+
 	output, err := cmd.Output()
 	if err != nil {
-		fmt.Println("Error: ", err)
+		fmt.Println("Error executing command:", err)
+		return
 	}
 
-	var apps []AppList
+	var apps []AppMonkirTag
 	lines := strings.Split(string(output), "\n")[2:] // Skip header lines
 
 	// Regular expression to match fields separated by one or more spaces
-	re := regexp.MustCompile(`^([^ ]+(?: [^ ]+)*) +([^ ]+) +([^ ]+)`)
+	re := regexp.MustCompile(`^([^ ]+(?: [^ ]+)*) +([^ ]+) +([^ ]+) +([^ ]+(?: [^ ]+)*) +([^ ]+)`)
+	//re := regexp.MustCompile(`^([^ ]+(?: [^ ]+)*) +([^ ]+) +([^ ]+) +(Moniker: .+?) +([^ ]+)`)
 
 	for _, line := range lines {
+		fmt.Println("Line:", line)
 		match := re.FindStringSubmatch(line)
-		if len(match) == 4 {
-			app := AppList{
+		if len(match) == 6 {
+			app := AppMonkirTag{
 				Name:    match[1],
 				Id:      match[2],
 				Version: match[3],
+				//Match:   match[4],
 			}
 			apps = append(apps, app)
 		}
@@ -47,7 +53,7 @@ func WingetJSONList() {
 	}
 
 	// Write JSON data to file
-	file, err := os.Create("winget_lists.json")
+	file, err := os.Create("winget_apps.json")
 	if err != nil {
 		fmt.Println("Error creating file:", err)
 		return
@@ -60,5 +66,5 @@ func WingetJSONList() {
 		return
 	}
 
-	fmt.Println("JSON data written to winget_lists.json successfully")
+	fmt.Println("JSON data written to winget_apps.json successfully")
 }

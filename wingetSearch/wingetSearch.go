@@ -1,4 +1,4 @@
-package wingetlist
+package wingetsearch
 
 import (
 	"encoding/json"
@@ -9,36 +9,36 @@ import (
 	"strings"
 )
 
-type AppMonkirTag struct {
+type App struct {
 	Name    string `json:"Name"`
 	Id      string `json:"Id"`
 	Version string `json:"Version"`
-	//Match   string `json:"Match,omitempty"`
+	Match   string `json:"Match,omitempty"`
+	Source  string `json:"Source,omitempty"`
 }
 
-func WingetMonikerSource() {
-	cmd := exec.Command("winget", "search", "--moniker=vs2019", "--source=winget")
+func WingetJSONSearch() {
+	cmd := exec.Command("winget", "search", "--moniker=python", "--source=winget")
 	output, err := cmd.Output()
 	if err != nil {
 		fmt.Println("Error executing command:", err)
 		return
 	}
 
-	var apps []AppMonkirTag
+	var apps []App
 	lines := strings.Split(string(output), "\n")[2:] // Skip header lines
 
 	// Regular expression to match fields separated by one or more spaces
 	re := regexp.MustCompile(`^([^ ]+(?: [^ ]+)*) +([^ ]+) +([^ ]+) +([^ ]+(?: [^ ]+)*) +([^ ]+)`)
-	//re := regexp.MustCompile(`^([^ ]+(?: [^ ]+)*) +([^ ]+) +([^ ]+) +(Moniker: .+?) +([^ ]+)`)
-
 	for _, line := range lines {
 		match := re.FindStringSubmatch(line)
 		if len(match) == 6 {
-			app := AppMonkirTag{
+			app := App{
 				Name:    match[1],
 				Id:      match[2],
 				Version: match[3],
-				//Match:   match[4],
+				Match:   match[4],
+				Source:  match[5],
 			}
 			apps = append(apps, app)
 		}

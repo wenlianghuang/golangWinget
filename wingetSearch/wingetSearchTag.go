@@ -1,4 +1,4 @@
-package wingetlist
+package wingetsearch
 
 import (
 	"encoding/json"

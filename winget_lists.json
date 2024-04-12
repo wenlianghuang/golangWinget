@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "Microsoft Visual Studio Installer",
+    "Id": "{6F320B93-EE3C-4826-85E0-ADF79F8D4C61}",
+    "Version": "3.9.2164.57262"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2015-2022 Redistributable… Microsoft.VCRedist.2015+.x64",
+    "Id": "14.40.33617.1",
+    "Version": "winget\r"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2015-2022 Redistributable… Microsoft.VCRedist.2015+.x86",
+    "Id": "14.40.33617.1",
+    "Version": "winget\r"
+  },
+  {
+    "Name": "Microsoft Visual Studio Code (User)",
+    "Id": "Microsoft.VisualStudioCode",
+    "Version": "1.88.0"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2015 UWP Runtime Package",
+    "Id": "Microsoft.VCLibs.140.00_8wekyb3d8bbwe",
+    "Version": "14.0.33519.0"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2015 UWP Desktop Runtime … Microsoft.VCLibs.Desktop.14",
+    "Id": "14.0.33519.0",
+    "Version": "winget\r"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2015 UWP Runtime Package",
+    "Id": "Microsoft.VCLibs.140.00.Debug_8wekyb3d8bbwe",
+    "Version": "14.0.30704.0"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2013 Runtime Package",
+    "Id": "Microsoft.VCLibs.120.00.Debug.Universal_8wekyb3…",
+    "Version": "12.0.30501.0"
+  },
+  {
+    "Name": "Microsoft Visual C++ 2013 Runtime Package",
+    "Id": "Microsoft.VCLibs.120.00.Universal_8wekyb3d8bbwe",
+    "Version": "12.0.30501.0"
+  }
+]

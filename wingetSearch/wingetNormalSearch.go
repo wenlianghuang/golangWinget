@@ -1,4 +1,4 @@
-package wingetlist
+package wingetsearch
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ type AppNormal struct {
 	Version string
 }
 
-func WingetNormalList() {
+func WingetNormalSearch() {
 	cmd := exec.Command("winget", "search", "--id=python3.10")
 	output, err := cmd.Output()
 	if err != nil {
